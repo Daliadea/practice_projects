@@ -85,9 +85,13 @@ print("""_
 
 game_run = True
 life = 0
-
+list = []
 while game_run == True:
     guess = input("Guess a letter: ").lower()
+    if guess in list:
+        print("You have already guessed this letter")
+        continue
+    list.append(guess)
     count = 0
     correct = False
     for letter in chosen_word:
